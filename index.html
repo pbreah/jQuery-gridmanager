@@ -72,7 +72,78 @@
 <h2>
 <a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
 
-<p><em>(Coming soon)</em></p>
+<p>See <a href="http://neokoenig.github.io/jQuery-gridmanager/">GitHub Pages</a></p>
+
+<h3>
+<a name="why-does-this-exist" class="anchor" href="#why-does-this-exist"><span class="octicon octicon-link"></span></a>Why does this exist?</h3>
+
+<p>I was becoming annoyed with the lack of layout tools which you could use with a Rich Text Editor.
+Specifically, users would get bewildered by divs everywhere with Bootstrap. Let's face it, if you're not a coder, adding a row or clearfix class, then specifying divs with col-md-6 etc isn't exactly straight forward.</p>
+
+<p>This is designed to work in conjuction with TinyMCE (and others to follow hopefully); it uses HTML5's contentEditable attribute to hook in -inline- instances of TinyMCE.</p>
+
+<p>It identifies all your col-md-* divs - so anything with class="col-md-6" (or any other number), changes the contentEditable to true, which in turn loads in TinyMCE. When you're done manipulating the DOM, previewing strips out and destroys all the TinyMCE instances, removes any additional markup, strips out inline styles on columns and lets you see the markup you've just created in the page, as actually will be!</p>
+
+<p>Saving posts the contents of the main div to a URL via ajax as specified by you in the configuration.</p>
+
+<p>Useful tip, set debug=1 to see console.log action.</p>
+
+<div class="highlight highlight-html"><pre>$(document).ready(function(){ 
+   $("#mycanvas").gridmanager({
+       remoteURL: "/save.php",
+       debug: 1   
+   });  
+});
+</pre></div>
+
+<h3>
+<a name="dont-like-the-column-presets" class="anchor" href="#dont-like-the-column-presets"><span class="octicon octicon-link"></span></a>Don't like the column presets?</h3>
+
+<p>You replace with your own. Simply do</p>
+
+<div class="highlight highlight-html"><pre>$(document).ready(function(){ 
+   $("#mycanvas").gridmanager({
+       remoteURL: "/save.php",
+       buttons: [[12], [6,6], [4,4,4], [3,3,3,3], [2,2,2,2,2,2], [2,8,2], [4,8], [8,4]]"   
+   });  
+});
+</pre></div>
+
+<h3>
+<a name="want-your-own-tinymce-config" class="anchor" href="#want-your-own-tinymce-config"><span class="octicon octicon-link"></span></a>Want your own TinyMCE config?</h3>
+
+<p>Pass it in:</p>
+
+<div class="highlight highlight-html"><pre>$(document).ready(function(){ 
+   $("#mycanvas").gridmanager({
+   remoteURL: "/save.php",
+   tinyMCE: {
+            selector: "[contenteditable='true']",
+            inline: true,
+            plugins: [
+            "advlist autolink lists link image charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table contextmenu paste"
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+        } 
+   });  
+});
+</pre></div>
+
+<p>Remember, you'll need to download the dependencies via bower/npm to run the source.</p>
+
+<h3>
+<a name="does-it-need-additional-css" class="anchor" href="#does-it-need-additional-css"><span class="octicon octicon-link"></span></a>Does it need Additional CSS?</h3>
+
+<p>Almost everything is done from bootstrap classes. You might want to add the following though:</p>
+
+<div class="highlight highlight-css"><pre><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span> 
+  <span class="nf">#gridmanager-canvas</span> <span class="p">{</span><span class="k">min-height</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nf">#gridmanager-canvas</span> <span class="nc">.row.editing</span> <span class="p">{</span><span class="k">padding</span><span class="o">:</span><span class="m">5px</span><span class="p">;</span> <span class="k">border</span><span class="o">:</span><span class="m">3px</span> <span class="k">dotted</span> <span class="m">#222</span><span class="p">;</span> <span class="k">min-height</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span> <span class="k">margin-bottom</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span> <span class="p">}</span> 
+  <span class="nf">#gridmanager-canvas</span> <span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="nt">col-</span><span class="o">][</span><span class="nt">contenteditable</span><span class="o">=</span><span class="s2">"true"</span><span class="o">]</span> <span class="p">{</span><span class="k">padding</span><span class="o">:</span><span class="m">5px</span><span class="p">;</span> <span class="k">border</span><span class="o">:</span><span class="m">3px</span> <span class="k">dotted</span> <span class="m">#999</span><span class="p">;</span> <span class="k">min-height</span><span class="o">:</span> <span class="m">30px</span><span class="p">;}</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</pre></div>
 
 <h2>
 <a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
@@ -82,7 +153,7 @@
 <h2>
 <a name="release-history" class="anchor" href="#release-history"><span class="octicon octicon-link"></span></a>Release History</h2>
 
-<p><em>(Nothing yet)</em></p>
+<p>0.1.0 - initial alpha test.</p>
       </section>
 
     </div>
