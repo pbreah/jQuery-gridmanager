@@ -139,15 +139,8 @@ Specifically, users would get bewildered by divs everywhere with Bootstrap. Let'
 <h3>
 <a name="does-it-need-additional-css" class="anchor" href="#does-it-need-additional-css"><span class="octicon octicon-link"></span></a>Does it need Additional CSS?</h3>
 
-<p>Almost everything is done from bootstrap classes. You might want to add the following though:</p>
-
-<div class="highlight highlight-css"><pre><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span> 
-  <span class="nf">#gridmanager-canvas</span> <span class="p">{</span><span class="k">min-height</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span> <span class="p">}</span>
-  <span class="nf">#gridmanager-canvas</span> <span class="nc">.row.editing</span> <span class="p">{</span><span class="k">padding</span><span class="o">:</span><span class="m">5px</span><span class="p">;</span> <span class="k">border</span><span class="o">:</span><span class="m">3px</span> <span class="k">dotted</span> <span class="m">#222</span><span class="p">;</span> <span class="k">min-height</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span> <span class="k">margin-bottom</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span> <span class="p">}</span> 
-  <span class="nf">#gridmanager-canvas</span> <span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="nt">col-</span><span class="o">][</span><span class="nt">contenteditable</span><span class="o">=</span><span class="s2">"true"</span><span class="o">]</span> <span class="p">{</span><span class="k">padding</span><span class="o">:</span><span class="m">5px</span><span class="p">;</span> <span class="k">border</span><span class="o">:</span><span class="m">3px</span> <span class="k">dotted</span> <span class="m">#999</span><span class="p">;</span> <span class="k">min-height</span><span class="o">:</span> <span class="m">30px</span><span class="p">;}</span>
-<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
-</pre></div>
-
+<p>Almost everything is done from bootstrap classes. There is a css file included which highlights the currently editing rows etc, so that's highly recommended. Bear in mind all the column widths etc are being read directly from your installation of bootstrap, so there's only like 4-5 lines of CSS.</p>
+ 
 <h3>
 <a name="comments" class="anchor" href="#comments"><span class="octicon octicon-link"></span></a>Comments? Thoughts?</h3>
 <p>It's my first jQuery plugin, so be nice. As such, I'd love to hear (or get a pull request) from anyone who can help improve it!. As such, it's offered "as is", with no warranties whatsoever. If you like it, drop me a line or comment at <a href="http://www.oxalto.co.uk">OxAlto.co.uk</a></p>
