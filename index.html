@@ -45,32 +45,9 @@
 <p>A way of building rows and grids with built in editable regions; requires jQuery, jQueryUI, Bootstrap 3.x, TinyMCE</p>
 
 <h2>
-<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2> 
 
-<p>Download the <a href="https://raw.githubusercontent.com/neokoenig/jQuery-gridmanager/master/dist/jquery.gridmanager.min.js">production version</a> or the <a href="https://raw.githubusercontent.com/neokoenig/jQuery-gridmanager/master/dist/jquery.gridmanager.js">development version</a>.</p>
-
-<p>In your web page:</p>
-
-<div class="highlight highlight-html"><pre>
-&lt;link rel="stylesheet" src="jquery.gridmanager.css" /&gt;
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/jquery.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/jquery-ui.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/bootstrap.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/tinymce.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/tinymce.query.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.gridmanager.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>  
-    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"myeditableregion"</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-
-<span class="nt">&lt;script&gt;</span> 
-<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span> 
-   <span class="nx">$</span><span class="p">(</span><span class="s2">"#myeditableregion"</span><span class="p">).</span><span class="nx">gridmanager</span><span class="p">();</span>  
-<span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span>
-
-</pre></div>
+<p>Please see the /demo folder in the git distribution, but essentially it's just a matter of making sure you've got jQuery/Bootstrap/jQueryUI, and then preferably one of TinyMCE or CKeditor, and linking to the gridmanager JS and CSS file. Simples. Oh and adding .gridmanager(); to your element of choice, i.e $("#foo").gridmanager();</p>
 
 <h2>
 <a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
