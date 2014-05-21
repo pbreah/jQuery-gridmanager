@@ -83,9 +83,9 @@
 <p>I was becoming annoyed with the lack of layout tools which you could use with a Rich Text Editor.
 Specifically, users would get bewildered by divs everywhere with Bootstrap. Let's face it, if you're not a coder, adding a row or clearfix class, then specifying divs with col-md-6 etc isn't exactly straight forward.</p>
 
-<p>This is designed to work in conjuction with TinyMCE (and others to follow hopefully); it uses HTML5's contentEditable attribute to hook in -inline- instances of TinyMCE.</p>
+<p>This is designed to work in conjuction with TinyMCE or CKeditor; it uses HTML5's contentEditable attribute to hook in -inline- instances of these rich text editors.</p>
 
-<p>It identifies all your col-md-* divs - so anything with class="col-md-6" (or any other number), changes the contentEditable to true, which in turn loads in TinyMCE. When you're done manipulating the DOM, previewing strips out and destroys all the TinyMCE instances, removes any additional markup, strips out inline styles on columns and lets you see the markup you've just created in the page, as actually will be!</p>
+<p>It identifies all your col-md-* divs - so anything with class="col-md-6" (or any other number), changes the contentEditable to true, which in turn loads in TinyMCE/CKeditor (or just plain). When you're done manipulating the DOM, previewing strips out and destroys all the RTE instances, removes any additional markup, strips out inline styles on columns and lets you see the markup you've just created in the page, as actually will be!</p>
 
 <p>Saving posts the contents of the main div to a URL via ajax as specified by you in the configuration.</p>
 
@@ -98,6 +98,9 @@ Specifically, users would get bewildered by divs everywhere with Bootstrap. Let'
    });  
 });
 </pre></div>
+
+<h3>How do I hook in a Rich Text Editor?</h3>
+<p>Just include it in the page. the plugin will try and auto-identify whether it's TinyMCE (4.x) or CKEditor (4.x).</p>
 
 <h3>
 <a name="dont-like-the-column-presets" class="anchor" href="#dont-like-the-column-presets"><span class="octicon octicon-link"></span></a>Don't like the column presets?</h3>
@@ -113,9 +116,9 @@ Specifically, users would get bewildered by divs everywhere with Bootstrap. Let'
 </pre></div>
 
 <h3>
-<a name="want-your-own-tinymce-config" class="anchor" href="#want-your-own-tinymce-config"><span class="octicon octicon-link"></span></a>Want your own TinyMCE config?</h3>
+<a name="want-your-own-tinymce-config" class="anchor" href="#want-your-own-tinymce-config"><span class="octicon octicon-link"></span></a>Want your own RTE config?</h3>
 
-<p>Pass it in:</p>
+<p>For TinyMCE just pass it in:</p>
 
 <div class="highlight highlight-html"><pre>$(document).ready(function(){ 
    $("#mycanvas").gridmanager({
@@ -134,12 +137,17 @@ Specifically, users would get bewildered by divs everywhere with Bootstrap. Let'
 });
 </pre></div>
 
+<p>For CKEditor, just pass in the path to your custom js file - look in the demo folder for examples.</p>
+
 <p>Remember, you'll need to download the dependencies via bower/npm to run the source.</p>
 
 <h3>
 <a name="does-it-need-additional-css" class="anchor" href="#does-it-need-additional-css"><span class="octicon octicon-link"></span></a>Does it need Additional CSS?</h3>
 
 <p>Almost everything is done from bootstrap classes. There is a css file included which highlights the currently editing rows etc, so that's highly recommended. Bear in mind all the column widths etc are being read directly from your installation of bootstrap, so there's only like 4-5 lines of CSS.</p>
+
+<h3>What other options are there?</h3>
+<p>For a full list see the unminified JS source (DefaultOptions section down the bottom) whic gives you an idea what's what. These will probably change in the future. You've been warned.</p>
  
 <h3>
 <a name="comments" class="anchor" href="#comments"><span class="octicon octicon-link"></span></a>Comments? Thoughts?</h3>
@@ -153,6 +161,7 @@ Specifically, users would get bewildered by divs everywhere with Bootstrap. Let'
 <a name="release-history" class="anchor" href="#release-history"><span class="octicon octicon-link"></span></a>Release History</h2>
 
 <ul>
+<li>0.2.0 - TinyMCE, CKEditor now supported. Columns now moveable. Added reset, alert features, redid CSS and most of the plugin</li>
 <li>0.1.1 - CSS moved to it's own file. Slight visual tweaks.</li>
 <li>0.1.0 - initial alpha test.</li>
 </ul>
